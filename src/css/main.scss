@@ -33,16 +33,49 @@ body {
   font-family: 'Ubuntu Mono', monospace;
 }
 
-.container {
+// App.js
+.main {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $light_brown;
+}
 
-  h1 {
-    font-size: 36px;
-    color: $main_grey;
+// Navbar
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: $main_red;
+
+  &__container {
+    align-items: center;
+
+    &__logo {
+      font-size: 36px;
+      line-height: 80px;
+      height: 100%;
+      color: $light_brown;
+      margin: auto 0 auto 2rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    &__buttom {
+      height: 100%;
+      font-size: 16px;
+      background-color: $light_brown;
+      border-radius: 5px;
+      padding: 10px;
+      margin: auto 2rem auto 0;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
   }
 }
