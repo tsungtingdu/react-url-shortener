@@ -4,12 +4,26 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import Layout from '../Layout'
 
-const Signin = () => {
+const Signin = (props) => {
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = async (data) => {
-    const { email, password } = data
-    console.log(email, password)
+    try {
+      const { email, password } = data
+      const res = await axios.post('http://www.td.coffee/api/users/signin', { email, password }, {
+        headers: { 'Content-Type': 'application/json' }
+      })
+
+      // get token and store in localStorage
+      const { token } = res.data
+      global.auth.setToken(token)
+
+      // redirect to home page
+      props.history.push("/")
+    }
+    catch (err) {
+      console.log(err)
+    }
   }
 
   return (
