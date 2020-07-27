@@ -1,0 +1,22 @@
+$light_blue:#dbf6ff;
+$secondary-blue:#00bfff;
+
+html,
+body {
+  width: 100%;
+  height: 800px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light_blue;
+
+  h1 {
+    font-size: 36px;
+    color: $secondary-blue;
+  }
+}
