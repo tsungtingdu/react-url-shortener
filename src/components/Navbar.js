@@ -7,7 +7,7 @@ const Navbar = () => (
       <div className="navbar__container__logo">
         URL Shortener
       </div>
-      <div className="navbar__container__buttom">
+      <div className="navbar__container__button">
         Sign in
       </div>
     </div>
