@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => (
@@ -8,7 +9,9 @@ const Navbar = () => (
         URL Shortener
       </div>
       <div className="navbar__container__button">
-        Sign in
+        <Fragment>
+          <Link to="/users/signin">Sign in</Link>
+        </Fragment>
       </div>
     </div>
   </div>

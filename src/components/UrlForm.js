@@ -22,7 +22,6 @@ const UrlForm = () => {
   return (
     <div className="urlForm d-flex justify-content-center align-items-center">
       <form className="urlForm__container d-flex flex-column" onSubmit={submitData}>
-
         <input
           type="text"
           placeholder="Enter your url here"

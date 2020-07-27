@@ -1,13 +1,12 @@
 import React from 'react';
-import Navbar from '../components/Navbar'
+import Layout from '../Layout'
 import UrlForm from '../components/UrlForm'
 
 const App = () => {
   return (
-    <div className="main">
-      <Navbar />
+    <Layout>
       <UrlForm />
-    </div>
+    </Layout>
   )
 }
 
