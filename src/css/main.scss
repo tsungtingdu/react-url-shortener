@@ -1,10 +1,36 @@
-$light_blue:#dbf6ff;
-$secondary-blue:#00bfff;
+// reset css
+@import 'css_reset';
+@import 'layout';
 
+// font
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+// color theme
+$main_red: #E85A4F;
+$light_red: #E98074;
+$main_grey: #8E8D8A;
+$main_brown: #D8C3A5;
+$light_brown: #EAE7DC;
+$white: #ffffff;
+$dark: #000000;
+$grey: #888888;
+
+// main style
 html,
 body {
   width: 100%;
-  height: 800px;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 .container {
@@ -13,10 +39,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $light_blue;
+  background-color: $light_brown;
 
   h1 {
     font-size: 36px;
-    color: $secondary-blue;
+    color: $main_grey;
   }
 }
