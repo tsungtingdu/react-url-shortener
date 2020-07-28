@@ -135,6 +135,12 @@ a:hover {
       font-family: 'Ubuntu Mono', monospace;
       border-radius: 10px;
       border: 1px solid $grey;
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+        line-height: 32px;
+        padding: 0 10px;
+      }
     }
 
     &__buttons {
@@ -151,8 +157,9 @@ a:hover {
         border-radius: 10px;
 
         @media screen and (max-width: 768px) {
-          font-size: 18px;
+          font-size: 14px;
           line-height: 30px;
+          padding: 0 10px;
         }
       }
 
