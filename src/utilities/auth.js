@@ -11,13 +11,21 @@ const getToken = () => {
 }
 
 const getData = () => {
-  const jwtoken = getToken()
-  const data = decode(jwtoken)
-  return data
+  const jwtoken = getToken() ? getToken() : null
+  if (jwtoken) {
+    const data = decode(jwtoken)
+    return data
+  }
+  return null
+}
+
+const removeToken = () => {
+  localStorage.removeItem(JWT);
 }
 
 global.auth = {
   setToken,
   getToken,
-  getData
+  getData,
+  removeToken
 };

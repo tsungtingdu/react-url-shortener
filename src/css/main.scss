@@ -33,6 +33,12 @@ body {
   height: 100%;
 }
 
+a:checked,
+a:visited,
+a:hover {
+  color: inherit;
+}
+
 .Toastify__toast {
   width: 50vw;
   margin-top: 1rem;
@@ -93,6 +99,7 @@ body {
     }
 
     &__button {
+      font-family: 'Ubuntu Mono', monospace;
       height: 100%;
       font-size: 16px;
       background-color: $light_brown;

@@ -3,9 +3,13 @@ import Navbar from './components/Navbar'
 
 const Layout = (props) => {
 
+  const isLogin = useMemo(() => {
+    return global.auth.getData() ? true : false
+  }, [])
+
   return (
     <div className="main">
-      <Navbar />
+      <Navbar isLogin={isLogin} />
       {props.children}
     </div>
   );
