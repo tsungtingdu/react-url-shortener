@@ -22,7 +22,6 @@ const Signin = (props) => {
       props.history.push("/")
     }
     catch (err) {
-      toast.success('Sign in successfully!', { autoClose: 5000 })
       toast.error('Wrong email or password, please try again', { autoClose: 5000 })
     }
   }
