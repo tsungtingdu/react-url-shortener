@@ -6,9 +6,9 @@ const Navbar = () => (
   <Fragment>
     <div className="navbar">
       <div className="navbar__container d-flex justify-content-between">
-        <div className="navbar__container__logo">
-          URL Shortener
-      </div>
+        <Link to="/">
+          <div className="navbar__container__logo">URL Shortener</div>
+        </Link>
         <div className="navbar__container__button">
           <Fragment>
             <Link to="/users/signin">Sign in</Link>
