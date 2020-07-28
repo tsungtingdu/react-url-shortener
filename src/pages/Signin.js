@@ -19,7 +19,8 @@ const Signin = (props) => {
       global.auth.setToken(token)
 
       // redirect to home page
-      props.history.push("/")
+      toast.success('Sign in successfully! Redirect to main page ...', { autoClose: 5000 })
+      setTimeout(function () { props.history.push("/") }, 1500);
     }
     catch (err) {
       toast.error('Wrong email or password, please try again', { autoClose: 5000 })
@@ -54,9 +55,9 @@ const Signin = (props) => {
             )}
           </div>
           <div className="userForm__container__field d-flex flex-column">
-            <label htmlFor="" className="input__label">Password</label>
+            <label htmlFor="" className="input__label" >Password</label>
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               className="input__field"
               name="password"
@@ -76,7 +77,7 @@ const Signin = (props) => {
             )}
           </div>
           <div className="userForm__container__control d-flex flex-column">
-            <button type="submit" className="submitButton">Login</button>
+            <button type="submit" className="submitButton">Submit</button>
             <Link to="/users/signup">
               <button className="switchButton" type='button'>
                 Sign up

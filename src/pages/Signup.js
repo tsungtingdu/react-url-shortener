@@ -3,13 +3,32 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import Layout from '../Layout'
+import { toast } from "react-toastify"
 
-const Signup = () => {
+const Signup = (props) => {
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = async (data) => {
-    const { name, email, password } = data
-    console.log(name, email, password)
+    try {
+      const { name, email, password, passwordCheck } = data
+
+      if (password != passwordCheck) {
+        toast.error('passwords are inconsistent', { autoClose: 5000 })
+        return
+      }
+
+      const res = await axios.post('http://www.td.coffee/api/users/signup', { name, email, password, passwordCheck }, {
+        headers: { 'Content-Type': 'application/json' }
+      })
+
+      // redirect to sign in page
+      toast.success('Registering successfully! Redirect to sign in page ...', { autoClose: 5000 })
+      setTimeout(function () { props.history.push("/users/signin") }, 3000);
+
+    }
+    catch (err) {
+      toast.error('Something wrong, please try again or another email', { autoClose: 5000 })
+    }
   }
 
   return (
@@ -62,7 +81,7 @@ const Signup = () => {
           <div className="userForm__container__field d-flex flex-column">
             <label htmlFor="" className="input__label">Password</label>
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               className="input__field"
               name="password"
@@ -84,7 +103,7 @@ const Signup = () => {
           <div className="userForm__container__field d-flex flex-column">
             <label htmlFor="" className="input__label">Please enter password again</label>
             <input
-              type="text"
+              type="password"
               placeholder="Please enter password again"
               className="input__field"
               name="passwordCheck"
@@ -104,7 +123,7 @@ const Signup = () => {
             )}
           </div>
           <div className="userForm__container__control d-flex flex-column">
-            <button type="submit" className="submitButton">Login</button>
+            <button type="submit" className="submitButton">Submit</button>
             <Link to="/users/signin">
               <button className="switchButton" type='button'>
                 Sign in
