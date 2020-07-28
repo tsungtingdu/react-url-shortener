@@ -115,7 +115,7 @@ a:hover {
 }
 
 .urlForm {
-  padding: 5rem 0;
+  padding: 5rem 0 2rem 0;
 
   &__container {
     width: 80vw;
@@ -179,6 +179,80 @@ a:hover {
       a {
         color: blue;
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+.dataTable {
+  width: 100%;
+  margin-bottom: 3rem;
+
+  &__container {
+    width: 80vw;
+    height: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid $light_brown;
+    box-shadow: 1px 1px 1px 1px $main_brown;
+    // min-width: 500px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+
+      tr {
+        width: 100%;
+        height: 20px;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: left;
+
+        th,
+        td {
+          word-wrap: break-all;
+          padding: 1rem;
+
+          &:nth-child(1) {
+            width: 15%;
+          }
+
+          &:nth-child(2) {
+            width: 45%;
+          }
+
+          &:nth-child(3) {
+            width: 10%;
+          }
+
+          &:nth-child(4) {
+            width: 20%;
+          }
+
+          a {
+            cursor: pointer;
+            color: $light_red;
+          }
+        }
+
+        th {
+          font-size: 24px;
+          color: $main_red;
+          word-break: normal;
+
+          @media screen and (max-width: 992px) {
+            font-size: 18px;
+          }
+        }
+
+        td {
+          color: $grey;
+          word-break: break-all;
+
+          @media screen and (max-width: 992px) {
+            font-size: 16px;
+          }
+        }
       }
     }
   }
