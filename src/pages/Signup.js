@@ -104,9 +104,9 @@ const Signup = () => {
             )}
           </div>
           <div className="userForm__container__control d-flex flex-column">
-            <button type="submit" class="submitButton">Login</button>
+            <button type="submit" className="submitButton">Login</button>
             <Link to="/users/signin">
-              <button class="switchButton" type='button'>
+              <button className="switchButton" type='button'>
                 Sign in
             </button>
             </Link>

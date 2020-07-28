@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import Layout from '../Layout'
+import { toast } from "react-toastify"
 
 const Signin = (props) => {
   const { register, handleSubmit, errors } = useForm()
@@ -13,7 +14,6 @@ const Signin = (props) => {
       const res = await axios.post('http://www.td.coffee/api/users/signin', { email, password }, {
         headers: { 'Content-Type': 'application/json' }
       })
-
       // get token and store in localStorage
       const { token } = res.data
       global.auth.setToken(token)
@@ -22,7 +22,8 @@ const Signin = (props) => {
       props.history.push("/")
     }
     catch (err) {
-      console.log(err)
+      toast.success('Sign in successfully!', { autoClose: 5000 })
+      toast.error('Wrong email or password, please try again', { autoClose: 5000 })
     }
   }
 
@@ -76,9 +77,9 @@ const Signin = (props) => {
             )}
           </div>
           <div className="userForm__container__control d-flex flex-column">
-            <button type="submit" class="submitButton">Login</button>
+            <button type="submit" className="submitButton">Login</button>
             <Link to="/users/signup">
-              <button class="switchButton" type='button'>
+              <button className="switchButton" type='button'>
                 Sign up
             </button>
             </Link>
